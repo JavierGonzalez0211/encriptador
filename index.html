@@ -10,12 +10,33 @@
   </head>
   <body>
     <main class="main-container">
-      <object data="/images/VectorLogo.svg" class="logo"></object>
+      <div class="logo">
+        <object data="/images/VectorLogo.svg"></object>
+      </div>
       <input
         type="text"
         class="text-to-search"
         placeholder="Ingrese el texto aquí"
       />
+      <div class="helper-text-container">
+        <div class="helper-icon">
+          <object data="/images/bi_exclamation-circle-fill.svg"></object>
+        </div>
+        <span>Solo letras minúsculas y sin acentos</span>
+      </div>
+      <div class="button-container">
+        <button class="encrypt-button">Encriptar</button>
+        <button class="decrypt-button">Desencriptar</button>
+      </div>
+      <div class="result-side">
+        <object data="/images/Muñeco.svg" class="doll"></object>
+        <div class="info-message">
+          <p class="main-message">Ningún mensaje fue encontrado</p>
+          <span class="secondary-message"
+            >Ingresa el texto que desees encriptar o desencriptar.</span
+          >
+        </div>
+      </div>
     </main>
   </body>
 </html>
