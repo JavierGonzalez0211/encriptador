@@ -1,42 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- styles -->
     <link rel="stylesheet" href="/css/globalStyles.css" />
     <link rel="stylesheet" href="/css/index.css" />
     <title>Encriptador</title>
   </head>
+
   <body>
-    <main class="main-container">
+    <header>
       <div class="logo">
-        <object data="/images/VectorLogo.svg"></object>
+        <img src="/images/VectorLogo.svg" alt="Logo" />
       </div>
-      <input
-        type="text"
-        class="text-to-search"
-        placeholder="Ingrese el texto aquí"
-      />
-      <div class="helper-text-container">
-        <div class="helper-icon">
-          <object data="/images/bi_exclamation-circle-fill.svg"></object>
+    </header>
+
+    <main class="main-container">
+      <section class="left-side">
+        <textarea
+          id="input-Text"
+          class="text-to-encrypt"
+          placeholder="Ingrese el texto aquí"
+          rows="6"
+        ></textarea>
+        <div class="helper-text-container">
+          <div class="helper-icon">
+            <img
+              src="/images/bi_exclamation-circle-fill.svg"
+              alt="Exclamation Icon"
+            />
+          </div>
+          <span>Solo letras minúsculas y sin acentos</span>
         </div>
-        <span>Solo letras minúsculas y sin acentos</span>
-      </div>
-      <div class="button-container">
-        <button class="encrypt-button">Encriptar</button>
-        <button class="decrypt-button">Desencriptar</button>
-      </div>
-      <div class="result-side">
-        <object data="/images/Muñeco.svg" class="doll"></object>
-        <div class="messages-container">
-          <p class="main-message">Ningún mensaje fue encontrado</p>
-          <span class="secondary-message"
-            >Ingresa el texto que desees encriptar o desencriptar.</span
+
+        <div class="button-container">
+          <button class="encrypt-button" onclick="btnEncrypt()">
+            Encriptar
+          </button>
+          <button class="decrypt-button" onclick="btnDecrypt()">
+            Desencriptar
+          </button>
+        </div>
+      </section>
+
+      <section class="result-side">
+        <div class="no-message-encrypted">
+          <img src="/images/Muñeco.svg" alt="doll" class="doll" />
+          <div class="messages-container">
+            <p class="main-message">Ningún mensaje fue encontrado</p>
+            <span class="secondary-message"
+              >Ingresa el texto que desees encriptar o desencriptar.</span
+            >
+          </div>
+        </div>
+
+        <div class="result-display hidden">
+          <textarea
+            name="encrypted-message"
+            id="encrypted-message"
+            class="encrypted-message"
           >
+          </textarea>
+          <button class="copy-btn" onclick="btnCopy()">Copiar</button>
         </div>
-      </div>
+      </section>
     </main>
+    <script src="./js/script.js"></script>
   </body>
 </html>

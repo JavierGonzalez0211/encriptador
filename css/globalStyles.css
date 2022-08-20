@@ -1,5 +1,6 @@
-html {
+html * {
     box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
 }
 
 *, *:before, *:after {
@@ -8,4 +9,10 @@ html {
 
 body {
     margin: 0;
+    
+}
+
+button:hover {
+    cursor: pointer;
+    opacity: 0.8;
 }
