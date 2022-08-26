@@ -3,6 +3,20 @@ let encryptedMessage = document.querySelector(".encrypted-message");
 const noResultArea = document.querySelector(".no-message-encrypted");
 const resultArea = document.querySelector(".result-display");
 
+function stringNormalization(message) {
+  let r = message.toLowerCase();
+  r = r.replace(new RegExp(/[àáâãäå]/g), "a");
+  r = r.replace(new RegExp(/æ/g), "ae");
+  r = r.replace(new RegExp(/ç/g), "c");
+  r = r.replace(new RegExp(/[èéêë]/g), "e");
+  r = r.replace(new RegExp(/[ìíîï]/g), "i");
+  r = r.replace(new RegExp(/[òóôõö]/g), "o");
+  r = r.replace(new RegExp(/œ/g), "oe");
+  r = r.replace(new RegExp(/[ùúûü]/g), "u");
+  r = r.replace(new RegExp(/[ýÿ]/g), "y");
+  return r;
+}
+
 function encrypt(message) {
   let keyValueEncryptor = [
     ["e", "enter"],
@@ -11,7 +25,7 @@ function encrypt(message) {
     ["o", "ober"],
     ["u", "ufat"],
   ];
-  message = message.toLowerCase();
+  message = stringNormalization(message);
 
   for (let i = 0; i < keyValueEncryptor.length; i++) {
     if (message.includes(keyValueEncryptor[i][0])) {
@@ -32,7 +46,7 @@ function decrypt(message) {
     ["o", "ober"],
     ["u", "ufat"],
   ];
-  message = message.toLowerCase();
+  message = stringNormalization(message);
 
   for (let i = 0; i < keyValueEncryptor.length; i++) {
     if (message.includes(keyValueEncryptor[i][1])) {
