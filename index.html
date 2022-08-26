@@ -13,43 +13,42 @@
     />
     <!-- styles -->
     <link rel="stylesheet" href="/css/globalStyles.css" />
+
     <link rel="stylesheet" href="/css/index.css" />
     <title>Encriptador</title>
   </head>
 
   <body>
-    <header>
-      <div class="logo">
-        <img src="/images/VectorLogo.svg" alt="Logo" />
-      </div>
-    </header>
-
     <main class="main-container">
       <section class="left-side">
+        <div class="logo">
+          <img src="/images/VectorLogo.svg" alt="Logo" />
+        </div>
         <textarea
           id="input-Text"
           class="text-to-encrypt"
           placeholder="Ingrese el texto aquí"
-          rows="6"
         ></textarea>
-        <div class="helper-text-container">
-          <div class="helper-icon">
-            <img
-              src="/images/bi_exclamation-circle-fill.svg"
-              alt="Exclamation Icon"
-            />
+        <section class="buttons-section">
+          <div class="helper-text-container">
+            <div class="helper-icon">
+              <img
+                src="/images/bi_exclamation-circle-fill.svg"
+                alt="Exclamation Icon"
+              />
+            </div>
+            <span>Solo letras minúsculas y sin acentos</span>
           </div>
-          <span>Solo letras minúsculas y sin acentos</span>
-        </div>
 
-        <div class="button-container">
-          <button class="encrypt-button" onclick="btnEncrypt()">
-            Encriptar
-          </button>
-          <button class="decrypt-button" onclick="btnDecrypt()">
-            Desencriptar
-          </button>
-        </div>
+          <div class="button-container">
+            <button class="encrypt-button" onclick="btnEncrypt()">
+              Encriptar
+            </button>
+            <button class="decrypt-button" onclick="btnDecrypt()">
+              Desencriptar
+            </button>
+          </div>
+        </section>
       </section>
 
       <section class="result-side">
